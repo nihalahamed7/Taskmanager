@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="task-manager">
+            <h1>Task Manager</h1>
+
+            <!-- Search Bar -->
+            <input type="text" id="searchBar" placeholder="Search tasks..." onkeyup="searchTasks()" class="search-bar" />
+
+            <!-- Task Input Section -->
+            <div class="task-input-container">
+                <input type="text" id="taskInput" placeholder="What needs to be done?" />
+                <input type="date" id="taskDueDate" />
+                <select id="taskPriority">
+                    <option value="low">Low 🟢</option>
+                    <option value="medium">Medium 🟡</option>
+                    <option value="high">High 🔴</option>
+                </select>
+                <select id="taskCategory">
+                    <option value="work">Work 💼</option>
+                    <option value="personal">Personal 🏡</option>
+                    <option value="other">Other 🔧</option>
+                </select>
+                <button onclick="addTask()">Add Task ✨</button>
+            </div>
+
+            <!-- Sorting Section -->
+            <div class="task-sort-container">
+                <button onclick="sortTasksByPriority()">Sort by Priority</button>
+                <button onclick="sortTasksByDueDate()">Sort by Due Date</button>
+            </div>
+
+            <!-- Task List -->
+            <ul id="taskList"></ul>
+
+            <!-- Task Count -->
+            <div class="task-count">
+                <p>Total tasks: <span id="totalTasks">0</span> | Completed: <span id="completedTasks">0</span></p>
+            </div>
+
+            <!-- Clear All Button -->
+            <button class="clear-all" onclick="clearAllTasks()">Clear All Tasks 🧹</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
